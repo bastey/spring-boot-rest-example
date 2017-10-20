@@ -37,7 +37,6 @@ public class SwaggerConfig {
                 .title("REST example")
                 .description(description)
                 .termsOfServiceUrl("github")
-                .license("Siamak")
                 .licenseUrl("")
                 .version("1.0")
  //               .contact(new Contact("siamak"))
