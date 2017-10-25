@@ -89,7 +89,6 @@
 		</dependency>
 
 		<!-- integration with Swagger API doc generation http://goo.gl/J5FQDM -->
-		<!-- integration with Swagger API doc generation http://goo.gl/J5FQDM -->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
