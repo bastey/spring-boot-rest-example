@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
+import org.springframework.stereotype.Component;
 
 /**
  * In case the Authentication fails [invalid/missing credentials], this entry
@@ -17,6 +18,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationEn
  * failure [ We don't have a login page]. Here you can customize it to send
  * custom content in response.
  */
+@Component
 public class CustomBasicAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
 
 	@Override
@@ -27,9 +29,8 @@ public class CustomBasicAuthenticationEntryPoint extends BasicAuthenticationEntr
 		response.addHeader("WWW-Authenticate", "Basic realm=" + getRealmName() + "");
 
 		PrintWriter writer = response.getWriter();
-		// writer.println("HTTP Status 401 : " + authException.getMessage());
-		writer.println(
-				"HTTP Status 401 : " + "Une authentification Basic Auth est necessaire pour acceder a cette ressource");
+		writer.println("HTTP Status " + HttpServletResponse.SC_UNAUTHORIZED + " : "
+				+ "Une authentification Basic Auth est necessaire pour acceder a cette ressource");
 	}
 
 	@Override
