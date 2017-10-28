@@ -184,7 +184,7 @@ java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dspring
 and then you can connect to it remotely using your IDE. For example, from IntelliJ You have to add remote debug configuration: Edit configuration -> Remote.
 
 
-# TP
+# TP Basic Auth et SSL one way avec Spring Boot
 ## TP1 : Basic Auth sur Java avec Spring security
 
 Résulat final :
@@ -208,7 +208,8 @@ Avec Spring Boot on peut configurer HTTP ou HTTPS mais pas les 2.
 Si vous voulez activer les 2, vous devez configurer l'un des 2 par du code.  
 La documentation Spring Boot recommande de configurer le HTTPS dans le application.properties parce que c'est le + compliqué à définir  
 
-Convertir le keystore p12 en jks :
+Convertir le keystore p12 en jks :  
+keytool.exe se trouve dans jdk/bin  
 ```
 cd C:\certificat
 keytool -importkeystore -srckeystore server_keystore.p12 -srcstoretype PKCS12 -deststoretype JKS -destkeystore server_keystore.jks
@@ -227,8 +228,8 @@ server:
     key-store-password: secret
 ```
 
-Ajouter le keystore (au format p12) dans les certificats de Chrome
-Redémarrer Chrome
-Accéder à l'URL https://localhost:9443/example/v1/hotels  depuis CHROME et accepter le certificat non signé
+Ajouter le keystore (au format p12) dans les certificats de Chrome  
+Redémarrer Chrome  
+Accéder à l'URL https://localhost:9443/example/v1/hotels  depuis CHROME et accepter le certificat non signé  
 
 Tester dans POSTMAN l'URL : https://localhost:9443/example/v1/hotels et le login:password : toto:titi
