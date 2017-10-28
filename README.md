@@ -215,6 +215,8 @@ keytool -importkeystore -srckeystore server_keystore.p12 -srcstoretype PKCS12 -d
 password : secret
 ```
 
+Copier le fichier .jks dans src/main/resources
+
 Dans le application.yml
 ```
 \#enable HTTPS
@@ -225,4 +227,8 @@ server:
     key-store-password: secret
 ```
 
-Tester avec l'URL : https://localhost:9443/example/v1/hotels et le login:password : toto:titi
+Ajouter le keystore (au format p12) dans les certificats de Chrome
+Redémarrer Chrome
+Accéder à l'URL https://localhost:9443/example/v1/hotels  depuis CHROME et accepter le certificat non signé
+
+Tester dans POSTMAN l'URL : https://localhost:9443/example/v1/hotels et le login:password : toto:titi
