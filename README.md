@@ -204,9 +204,9 @@ Résulat final :
 git checkout basic_auth_and_ssl_one_way
 ```
 
-Avec Spring Boot on peut configurer HTTP ou HTTPS mais pas les 2.
-Si vous voulez activer les 2, vous devez configurer l'un des 2 par du code.
-La documentation Spring Boot recommande de configurer le HTTPS dans le application.properties parce que c'est le + compliqué à définir
+Avec Spring Boot on peut configurer HTTP ou HTTPS mais pas les 2.  
+Si vous voulez activer les 2, vous devez configurer l'un des 2 par du code.  
+La documentation Spring Boot recommande de configurer le HTTPS dans le application.properties parce que c'est le + compliqué à définir  
 
 Convertir le keystore p12 en jks :
 ```
