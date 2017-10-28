@@ -16,7 +16,7 @@ spring.datasource:
 server:
   port: 9443
   ssl:
-    key-store: src\main\resources\prod_1_keystore.jks
+    key-store: src\main\resources\server_keystore.jks
     key-store-password: secret
 
 #todo: make sure to always enable security in production
